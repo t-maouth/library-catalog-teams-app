@@ -57,19 +57,24 @@ class LibraryCatalog {
         if((title in this.recents)) {
             return(this.recents[title]);
         } else {
-            return("Sorry, that title doesn't exist in our catalog.")
+            throw Error;
         }
     }
 
-    checkOut() {
-        if(!isCheckedOut && copiesAvailable>=1) {
-            isCheckedOut = true;
-            copiesAvailable--;
-            return("This book has been successfully checked out.")
-        } else if (!isCheckedOut) {
-            return("There are no copies available.")
-        } else {
-            return("You have already checked this book out.")
+    checkOut(title) {
+        try { 
+            book = this.searchTitle(title)
+            if(!book.isCheckedOut && book.copiesAvailable>=1) {
+                book.isCheckedOut = true;
+                book.copiesAvailable--;
+                return("This book has been successfully checked out.")
+            } else if (!book.isCheckedOut) {
+                return("There are no copies available.")
+            } else {
+                return("You have already checked this book out.")
+            }
+        } catch (error) {
+            return("An error occurred.")
         }
     }
 
