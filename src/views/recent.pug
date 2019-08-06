@@ -1,6 +1,10 @@
 extends layout.pug
 
 block content
-  div(class="font-semibold font-title") Your recent books 
-  p Welcome to Microsoft Teams Hello World sample app (Node.js)
+  div(class="font-semibold font-title") Your recent books
+  each book, index in recents
+    div   
+      p #{index}
+      p #{book.author}
+      p #{book.description}
   

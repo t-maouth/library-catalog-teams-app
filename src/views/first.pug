@@ -1,6 +1,11 @@
 extends layout.pug
 
 block content
-  div(class="font-semibold font-title") This is our first tab
-  p Welcome to Microsoft Teams Hello World sample app (Node.js)
+  div(class="font-semibold font-title") Search
+  p Enter the title of the book you're looking for.
+  form(action="/second" method="post")
+    label(for="search") Search
+    input(type="text" name="search" id="search")
+    input(type="submit", value="Submit")
+    
   

@@ -1,6 +1,14 @@
 extends layout.pug
 
 block content
-  div(class="font-semibold font-title") This is our second tab
-  p Welcome to Microsoft Teams Hello World sample app (Node.js)
+  div(class="font-semibold font-title") Searched book
+  -var book = db.recents[search]
+  if (typeof book !== 'undefined')
+    div
+    h2 #{book.title}
+    h2 #{book.author}
+    p #{book.description}
+  else
+    div
+    h2 This book does not exist. 
   
