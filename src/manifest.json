@@ -1,6 +1,6 @@
 {
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
-    "manifestVersion": "1.3",
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.5",
     "version": "1.0.0",
     "id": "00000000-0000-0000-0000-000000000000",
     "packageName": "com.contoso.helloworld",
@@ -11,26 +11,35 @@
         "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
     },
     "name": {
-        "short": "Hello World",
-        "full": "Hello World App for Microsoft Teams"
+        "short": "Library Resources",
+        "full": "Library Resources for Microsoft Teams"
     },
     "description": {
-        "short": "Hello World App for Microsoft Teams",
-        "full": "This sample app provides a very simple app for Microsoft Teams. You can extend this to add more content and capabilities."
+        "short": "Library Resources for Microsoft Teams",
+        "full": "This app provides a connection to library resources for your classroom."
     },
     "icons": {
         "outline": "contoso20x20.png",
         "color": "contoso96x96.png"
     },
     "accentColor": "#60A18E",
-    "staticTabs": [{
+    "staticTabs": [
+        {
         "entityId": "com.contoso.helloworld.hellotab",
-        "name": "Hello Tab",
-        "contentUrl": "https://yourteamsapp.ngrok.io/hello",
+        "name": "Recent Books",
+        "contentUrl": "https://libraryresourcestest.azurewebsites.net/",
         "scopes": [
             "personal"
         ]
-    }],
+        },
+        {
+            "entityId": "SearchCatalog",
+            "name": "Search",
+            "contentUrl": "https://libraryresourcestest.azurewebsites.net/",
+            "websiteUrl": "http://fullwebsite.website.com/mytasks",
+            "scopes": [ "personal" ]
+          }
+    ],
     "configurableTabs": [{
         "configurationUrl": "https://yourteamsapp.ngrok.io/configure",
         "canUpdateConfiguration": true,
