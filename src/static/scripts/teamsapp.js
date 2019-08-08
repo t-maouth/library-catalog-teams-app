@@ -3,7 +3,6 @@
 
     // Call the initialize API first
     microsoftTeams.initialize();
-
     // Check the initial theme user chose and respect it
     microsoftTeams.getContext(function(context){
         if (context && context.theme) {
@@ -15,7 +14,7 @@
     microsoftTeams.registerOnThemeChangeHandler(function(theme) {
         setTheme(theme);
     });
-
+    //save configuration changes
     // Save configuration changes
     microsoftTeams.settings.registerOnSaveHandler(function(saveEvent) {
         // Let the Microsoft Teams platform know what you want to load based on
