@@ -55,5 +55,15 @@ module.exports.setup = function(app) {
         res.render('recent', {recents: lc.recents});
     });
 
+    app.get('/books/:bookTitle', function(req, res) {
+        console.log(req.params)
+        res.render('books', {db: lc, title: req.params})
+    })
+
+    app.get('/discussions/:bookTitle', function(req, res) {
+        res.render('discussions', {db: lc, title: req.params})
+    })
+
+
 
 };

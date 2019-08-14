@@ -6,7 +6,9 @@ block content
     div   
       p #{index}
       p #{book.author}
-      p #{book.description}
+      //p #{book.description}
       -var url = book.image;
-      img(src="https://www.w3schools.com/images/lamp.jpg")
+      a(href="/books/" + index)
+        img(src="/images/" + book.image height="200" width="150")
+
   

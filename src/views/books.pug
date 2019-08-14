@@ -1,0 +1,12 @@
+extends layout.pug
+
+
+block content
+  div(class="font-semibold font-title") Navigate our discussions pages, please
+  -var book = db.recents[title.bookTitle]
+  div
+    h1 #{book.title}
+    p #{book.description}
+    p #{book.author}
+    p There are #{book.copiesAvailable} copies available.
+    img(src= "/images/" + book.image height=300 width=200)

@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  div(class="font-semibold font-title") Navigate our discussions pages, please
+  p What are you thinking? 
+  -var book = db.recents[title.bookTitle]
+  h1 #{book.title}
+  for comment in book.comments
